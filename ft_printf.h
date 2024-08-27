@@ -13,12 +13,17 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "../libft/libft.h"
 # include <stdarg.h>
+# include <stdio.h>
+# include <unistd.h>
 
-int	ft_printf(const char *format, ...);
-int	ft_putchard(char c);
-int	ft_putsrtd(char *s, int fd);
-int	ft_putnbrd_base(long c, int base, int len, bool tof);
+int		ft_printf(const char *format, ...);
+void	comstart(int *len, const char *format, va_list charmeleon, int i);
+void	handle_pointer(int *len, va_list charmeleon);
+int		setres(const char *format, int *i, int len, va_list charmeleon);
+int		ft_putchard(char c);
+int		ft_putsrtd(char *s, int fd);
+int		ft_putnbrd_base(long c, int base, int len, int tof);
+int		ft_putptr(void *ptr);
 
 #endif
